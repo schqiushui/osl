@@ -66,7 +66,7 @@ dnl Input file for autoconf to build a configuration shellscript.
 
 m4_define([version_major], [0])
 m4_define([version_minor], [9])
-m4_define([version_revision], [0])
+m4_define([version_revision], [2])
 
 AC_PREREQ(2.53)
 dnl Fill here the @bug email adress.
@@ -173,10 +173,8 @@ AC_SUBST(VERSION_REVISION)
 dnl Configure Makefiles.
 AC_CONFIG_FILES([
 	Makefile
-	doc/Makefile
 	doc/Doxyfile
 	include/osl/scop.h
-	tests/Makefile
 	],
 	[test -z "$CONFIG_HEADERS" || echo timestamp > source/stamp-h.in])
 

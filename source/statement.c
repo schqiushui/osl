@@ -505,7 +505,7 @@ osl_statement_p osl_statement_read(FILE * foo) {
  * to the allocated space.
  * \return A pointer to an empty statement with fields set to default values.
  */
-osl_statement_p osl_statement_malloc() {
+osl_statement_p osl_statement_malloc(void) {
   osl_statement_p statement;
 
   OSL_malloc(statement, osl_statement_p, sizeof(osl_statement_t));
@@ -649,7 +649,7 @@ static osl_relation_p osl_relation_clone_one_safe(osl_relation_p relation) {
  */
 osl_statement_p osl_statement_remove_unions(osl_statement_p statement) {
   osl_relation_p domain, scattering;
-  osl_statement_p statement_ptr, result;
+  osl_statement_p statement_ptr = NULL, result;
   if (!statement)
     return NULL;
 
